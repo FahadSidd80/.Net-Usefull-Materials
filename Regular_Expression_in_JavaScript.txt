@@ -1,0 +1,9 @@
+Regular expression for only characters with space a-z, A-Z
+/^[a-zA-Z ]*$/
+
+
+Regular expression for only integer
+/^[0-9]*$/
+
+Regular expression for only 10 digit mobileno
+/^\d{10}$/

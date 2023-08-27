@@ -1,0 +1,147 @@
+<script type="text/javascript">
+        function validation()
+        {
+            var container = "";
+            container = checkname();
+            container += checkemail();
+            container += checkpassowrd();
+            container += checkcpassword();
+            container += checksalary();
+            container += checkage();
+            container += checkmobileno();
+
+            if (container == "") {
+                return true
+            }
+            else {
+                alert(container);
+                return false
+            }
+           
+        }
+        function checkname()
+        {
+            var tb = document.getElementById('txtname')
+            var exp = /^[a-zA-Z]*$/
+            if (tb.value == "") {
+                return 'Please enter your name.\n';
+
+            }
+            else if (exp.test(tb.value))
+            {
+                return true
+            }
+            else {
+                return 'please enter only alphabets..\n';
+            }
+        }
+        function checkemail()
+        {
+            var tb = document.getElementById('txtemail')
+            var exp = /\S+@\S+\.\S+/
+            if (tb.value == "") {
+                return 'Please enter your email id.\n';
+
+            }
+            else if (exp.test(tb.value))
+            {
+                return true
+            }
+            else {
+                return 'please enter valid email id...\n';
+            }   
+        }
+        function checkpassowrd() {
+            var tb = document.getElementById('txtpassword')
+            var exp = /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*\W)(?!.* ).{8,16}$/
+            if (tb.value == "") {
+                return 'Please enter your password.\n';
+
+            }
+            else if (exp.test(tb.value))
+            {
+                return true // here true means no message
+            }
+            else {
+                return 'please eneter password that must be contain one digit from 1 to 9, one lowercase letter,  one uppercase letter, one special character,  no space, and it must be 8-16 characters long...\n ';
+            }
+        }
+        function checkcpassword() {
+            var tb = document.getElementById('txtcpassword')
+            var tb1 = document.getElementById('txtpassword')
+            if (tb.value == "") {
+                return 'Please enter your confirm password.\n';
+
+            }
+            else if (tb.value == tb1.value)
+            {
+                return "";
+            }
+            else {
+                return 'password do not match..please enter correct password..\n';
+            }
+        }
+        function checksalary() {
+            var tb = document.getElementById('txtsalary')
+            var salary = 10000;
+            var exp = /^[0-9]*$/
+            if (tb.value == "") {
+                return 'Please enter your salary.\n';
+
+            }
+            else if (10000 <= salary & salary <= 20000) {
+                return "";
+            }
+            else if (salary.test(tb.value))
+            {
+                return "";
+            }
+            else if (exp.test(tb.value)) {
+                return 'please enter only digit between 0-9';
+            }
+            else {
+                return 'please insert salary between 10000 and 20000';
+            }
+        }
+        function checkage() {
+            var tb = document.getElementById('txtage')
+            var exp = /^[0-9]*$/
+            var age = 18;
+            var tbs = tb.value;
+            if (tb.value == "") {
+                return 'Please enter your age.\n';
+
+            }
+            else if (exp.test(tb.value))
+            {
+                return true
+            }
+            else if (age <= tbs)
+            {
+                return 'please enter value above 18';
+            }
+            else if (age <= tbs)
+            {
+                return "";
+            }
+            else {
+                return 'please enter only integer value from 0-9..\n';
+            }
+        }
+        function checkmobileno() {
+            var tb = document.getElementById('txtmobile')
+            var exp = /^\d{10}$/
+            if (tb.value == "") {
+                return 'Please enter your mobile.\n';
+
+            }
+            else if (exp.test(tb.value))
+            {
+                return true
+            }
+            else {
+                return 'please enter only 10 digit mobile number..\n';
+            }
+        }
+
+    </script>
